@@ -43,6 +43,7 @@ class AudioRecordActivity : AppCompatActivity() {
             object : AudioRecordCallback {
                 override fun start() {
                     mRecording = true
+                    mSimpleAudioPlayer.stopPlay()
                     toStartUI()
                 }
 
@@ -106,7 +107,7 @@ class AudioRecordActivity : AppCompatActivity() {
             finish()
         }
 
-        requestAudioPermission()
+        requestRecordAudioPermission()
     }
 
     override fun onDestroy() {
@@ -155,12 +156,12 @@ class AudioRecordActivity : AppCompatActivity() {
         }
     }
 
-    private fun requestAudioPermission(): Boolean {
-        val hasAudioPermission = ContextCompat.checkSelfPermission(
+    private fun requestRecordAudioPermission(): Boolean {
+        val hasRecordAudioPermission = ContextCompat.checkSelfPermission(
             this,
             Manifest.permission.RECORD_AUDIO
         ) == PackageManager.PERMISSION_GRANTED
-        if (hasAudioPermission) {
+        if (hasRecordAudioPermission) {
             return true
         }
         ActivityCompat.requestPermissions(

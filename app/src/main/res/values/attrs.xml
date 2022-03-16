@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="WaveView">
+        <!--    竖线的总数量    -->
+        <attr name="lineCount" format="integer" />
+        <!--    竖线的宽度    -->
+        <attr name="lineWidth" format="dimension" />
+        <!--    竖线的颜色    -->
+        <attr name="lineColor" format="color|reference" />
+        <!--    竖线动起来的起始数值    -->
+        <attr name="startLevel" format="integer" />
+        <!--    半边竖线刻度数    -->
+        <attr name="levelDivideCount" format="integer" />
+        <!--    波峰的数量    -->
+        <attr name="peakCount" format="integer" />
+    </declare-styleable>
+</resources>
